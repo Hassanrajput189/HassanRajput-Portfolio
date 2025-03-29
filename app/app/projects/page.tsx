@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/ProjectCard";
+import ProjectModal from "../components/ProjectModal";
 
 const handleNavigation = (url:string) => {
   if (!url) {
@@ -35,18 +36,20 @@ const projects = [
     tech: ["React", "Node", "Next"],
     url: "https://github.com/Hassanrajput189/Spotify-clone.git"
   },
-  
 ];
 
-const page = () => {
+const Page = () => {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
   return (
-    <div className="flex flex-col min-h-screen">
-    <Navbar />
-    <div className="flex flex-col justify-center items-center flex-grow ">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+      <Navbar />
+      <div className="flex flex-col justify-center items-center flex-grow py-12 px-4">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">My Projects</h1>
         <div className="flex flex-col flex-wrap justify-center items-center gap-20 lg:flex-row my-6">
           {projects.map((project, index) => (
             <Card
-              onClick={() => handleNavigation(project.url)}
+              onClick={() => setSelectedProject(project)}
               key={index}
               image={project.image}
               name={project.name}
@@ -55,12 +58,19 @@ const page = () => {
             />
           ))}
         </div>
+      </div>
+      <Footer />
+      
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </div>
-    <Footer />
-  </div>
   );
 };
 
-export default page;
+export default Page;
 
 

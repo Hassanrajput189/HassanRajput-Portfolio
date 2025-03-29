@@ -1,14 +1,16 @@
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+    
     return (
-      <div className=" w-full flex flex-col justify-center items-center py-1 text-sm bg-gray-200">
+      <div className="w-full flex flex-col justify-center items-center py-1 text-sm bg-gray-200 dark:bg-gray-800">
         <div>
-          <span>© 2024 Muhammad Hassan Rajput. All rights reserved.</span>
+          <span className="text-gray-800 dark:text-gray-200">© 2024 Muhammad Hassan Rajput. All rights reserved.</span>
         </div>
         <div className="flex justify-center items-center">
           <div className="flex items-center justify-center">
-            <span>Created with</span>
+            <span className="text-gray-800 dark:text-gray-200">Created with</span>
             <img width={30} className="mx-1" src="/heart.png" alt="heart icon" />
-            <span>by Hassan Rajput</span>      
+            <span className="text-gray-800 dark:text-gray-200">by Hassan Rajput</span>      
           </div>
         </div>
       </div>

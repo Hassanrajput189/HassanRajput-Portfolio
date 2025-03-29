@@ -1,8 +1,6 @@
-
-
-
 "use client";
 import React from 'react';
+import TypewriterText from './TypewriterText';
 
 const handleNavigation = (url: string) => {
   if (!url) {
@@ -18,10 +16,10 @@ const handleDownload = (filePath: string) => {
   link.download = filePath.split('/').pop() || "download";
   link.click();
 };
+
 const Info = () => {
   return (
-    
-    <div className="flex flex-col xl:flex-row  justify-center items-center gap-10  w-full lg:w-[80vw] mx-auto">
+    <div className="flex flex-col xl:flex-row justify-center items-center gap-10 w-full lg:w-[80vw] mx-auto">
       {/* Image Section */}
       <div id="image" className="lg:w-1/2 flex justify-center w-[80vw]">
         <img
@@ -35,10 +33,23 @@ const Info = () => {
       {/* Description Section */}
       <div id="description" className="lg:w-[60vw] xl:w-1/2 flex flex-col gap-8 items-center lg:items-start text-center lg:text-left px-4">
         <p className="text-5xl text-blue-600 font-bold">
-          Full Stack Web Developer
+          <TypewriterText text="Full Stack Web Developer" delay={100} />
         </p>
         <p className="text-lg text-gray-500">
-          Hi, I'm <span className='text-slate-700 font-bold'>Hassan Rajput</span>, a passionate Full Stack Web Developer from Hyderabad, Pakistan. With a strong foundation in modern web technologies, I specialize in building dynamic, responsive, and user-centered applications that deliver seamless experiences across all devices. Proficient in both front-end and back-end development, I have a keen eye for detail and a dedication to clean, efficient code that scales.
+          <TypewriterText 
+            text="Hi, I'm " 
+            delay={50} 
+            className="inline"
+          />
+          <TypewriterText 
+            text="Hassan Rajput" 
+            delay={50} 
+            className="inline font-bold text-slate-700"
+          />
+          <TypewriterText 
+            text=", a passionate Full Stack Web Developer from Hyderabad, Pakistan. With a strong foundation in modern web technologies, I specialize in building dynamic, responsive, and user-centered applications that deliver seamless experiences across all devices. Proficient in both front-end and back-end development, I have a keen eye for detail and a dedication to clean, efficient code that scales." 
+            delay={30}
+          />
         </p>
         {/* Social Icons */}
         <ul id="socials" className="flex justify-start items-center gap-8 mt-4">
@@ -54,16 +65,15 @@ const Info = () => {
           >
             <img width={45} src="/github.png" alt="GitHub" />
           </li>
-          <li className=" bg-blue-600 cursor-pointer hover:font-bold transition-all text-xl border border-white rounded-full px-2 py-1">
-          <button
-            onClick={() => handleDownload("/Hassan_Rajput's_resume.pdf")}
-            className="text-white flex justify-between items-center"
-          >
-            <img className="w-8 p-1" src="/resume_image.png" alt="Resume" />
-            <span className="px-1 text-lg">Download Resume</span>
-          </button>
-        </li>
-
+          <li className="bg-blue-600 cursor-pointer hover:font-bold transition-all text-xl border border-white rounded-full px-2 py-1">
+            <button
+              onClick={() => handleDownload("/Hassan_Rajput's_resume.pdf")}
+              className="text-white flex justify-between items-center"
+            >
+              <img className="w-8 p-1" src="/resume_image.png" alt="Resume" />
+              <span className="px-1 text-lg">Download Resume</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
