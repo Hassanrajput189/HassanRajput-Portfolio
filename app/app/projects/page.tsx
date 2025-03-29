@@ -16,11 +16,11 @@ const handleNavigation = (url:string) => {
 // Projects Data
 const projects = [
   {
-    image: "/iTask.png",
-    name: "iTask",
-    desc: "This to-do list app offers a clean, responsive interface for managing tasks with real-time updates, allowing users to effortlessly add, edit, and delete tasks.",
-    tech: ["React", "Node", "Next"],
-    url: "https://github.com/Hassanrajput189/iTask-Todo-List-App.git"
+    image: "/TypingClash.png",
+    name: "TypingClash",
+    desc: "A real-time typing competition platform where multiple users can compete simultaneously to improve their typing speed and accuracy.",
+    tech: ["React", "Node", "Socket.io", "Express"],
+    url: "https://github.com/Hassanrajput189/TypingClash.git"
   },
   {
     image: "/PassLOCK.png",
@@ -30,22 +30,36 @@ const projects = [
     url: "https://github.com/Hassanrajput189/PassLOCK-Password-Manager.git"
   },
   {
+    image: "/CryptoCraft.png",
+    name: "CryptoCraft",
+    desc: "A web application that implements various cryptography techniques for encrypting and decrypting text messages, providing a secure way to protect sensitive information.",
+    tech: ["React", "JavaScript", "CSS"],
+    url: "https://github.com/Hassanrajput189/CryptoCraft.git"
+  },
+  {
+    image: "/iTask.png",
+    name: "iTask",
+    desc: "This to-do list app offers a clean, responsive interface for managing tasks with real-time updates, allowing users to effortlessly add, edit, and delete tasks.",
+    tech: ["React", "Node", "Next"],
+    url: "https://github.com/Hassanrajput189/iTask-Todo-List-App.git"
+  },
+  {
     image: "/Spotify_clone.png",
     name: "Spotify Clone",
     desc: "This Spotify clone enables users to upload, organize, and listen to their favorite tracks, providing a seamless, personalized music experience for efficient music library management.",
     tech: ["React", "Node", "Next"],
     url: "https://github.com/Hassanrajput189/Spotify-clone.git"
-  },
+  }
 ];
 
 const Page = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <div className="flex flex-col justify-center items-center flex-grow py-12 px-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">My Projects</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">My Projects</h1>
         <div className="flex flex-col flex-wrap justify-center items-center gap-20 lg:flex-row my-6">
           {projects.map((project, index) => (
             <Card

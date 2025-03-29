@@ -4,8 +4,6 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AboutCard from "../components/AboutCard";
 
-
-
 const content = `A skilled web developer with expertise in creating dynamic, responsive, and visually appealing websites and applications 🌐💻. Proficient in front-end technologies such as HTML, CSS, and JavaScript 🖌️✨, as well as popular frameworks like React and Next.js ⚛️📦. Possesses a strong understanding of back-end development and database management 🛠️📊, ensuring seamless integration between front-end and server-side components 🔄.
 
 Committed to writing clean, maintainable code 📝 and implementing best practices to optimize performance 🚀 and user experience 🌟. Experienced in collaborating with designers 🎨, product managers 📋, and other developers 🤝 to deliver high-quality, user-centric web solutions 💡🌍.`;
@@ -16,7 +14,7 @@ const skills = [
 ];
 
 const whyMe=`
-1️⃣ I have a comprehensive grasp of programming fundamentals, including HTML, CSS, JavaScript, React, and Tailwind CSS 🌐🎨. With these skills, I efficiently develop and design modern, highly responsive web applications that meet today’s design and functionality standards 📱💻.
+1️⃣ I have a comprehensive grasp of programming fundamentals, including HTML, CSS, JavaScript, React, and Tailwind CSS 🌐🎨. With these skills, I efficiently develop and design modern, highly responsive web applications that meet today's design and functionality standards 📱💻.
 
 2️⃣ My strong problem-solving skills enable me to address complex challenges and devise innovative solutions 🧠🔍. I enjoy breaking down issues, evaluating different approaches, and implementing the most effective solutions for seamless functionality ⚙️✅.
 
