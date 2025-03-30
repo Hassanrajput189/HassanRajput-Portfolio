@@ -19,35 +19,35 @@ const projects = [
     image: "/TypingClash.png",
     name: "TypingClash",
     desc: "A real-time typing competition platform where multiple users can compete simultaneously to improve their typing speed and accuracy.",
-    tech: ["React", "Node", "Socket.io", "Express"],
+    tech: ["MongoDB","Express","React", "Node", "Socket.io", "Tailwind CSS"],
     url: "https://github.com/Hassanrajput189/TypingClash.git"
   },
   {
     image: "/PassLOCK.png",
     name: "PassLOCK",
     desc: "PassLOCK is a secure password manager that simplifies password storage and management, enabling users to create strong passwords and access credentials through a sleek interface",
-    tech: ["React", "Node", "Next"],
+    tech: ["React", "Node", "Tailwind CSS"],
     url: "https://github.com/Hassanrajput189/PassLOCK-Password-Manager.git"
   },
   {
     image: "/CryptoCraft.png",
     name: "CryptoCraft",
     desc: "A web application that implements various cryptography techniques for encrypting and decrypting text messages, providing a secure way to protect sensitive information.",
-    tech: ["React", "JavaScript", "CSS"],
+    tech: ["React", "Node", "Tailwind CSS"],
     url: "https://github.com/Hassanrajput189/CryptoCraft.git"
   },
   {
     image: "/iTask.png",
     name: "iTask",
     desc: "This to-do list app offers a clean, responsive interface for managing tasks with real-time updates, allowing users to effortlessly add, edit, and delete tasks.",
-    tech: ["React", "Node", "Next"],
+    tech: ["React", "Node", "Tailwind CSS"],
     url: "https://github.com/Hassanrajput189/iTask-Todo-List-App.git"
   },
   {
     image: "/Spotify_clone.png",
     name: "Spotify Clone",
     desc: "This Spotify clone enables users to upload, organize, and listen to their favorite tracks, providing a seamless, personalized music experience for efficient music library management.",
-    tech: ["React", "Node", "Next"],
+    tech: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/Hassanrajput189/Spotify-clone.git"
   }
 ];
