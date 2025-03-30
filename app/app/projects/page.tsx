@@ -5,14 +5,6 @@ import Footer from "../components/Footer";
 import Card from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
 
-const handleNavigation = (url:string) => {
-  if (!url) {
-    alert("invalid URL");
-    return;
-  }
-  window.open(url);
-};
-
 // Projects Data
 const projects = [
   {
