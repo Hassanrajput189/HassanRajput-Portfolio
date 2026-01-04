@@ -22,6 +22,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata: Metadata = {
   title: "Hassan Rajput Portfolio",
   description: "Full Stack Web Developer - Building modern web applications with clean code and exceptional user experiences",
@@ -31,6 +32,11 @@ export const metadata: Metadata = {
     title: "Hassan Rajput Portfolio",
     description: "Full Stack Web Developer - Building modern web applications",
     type: "website",
+  },
+  icons: {
+    icon: '/profile picture.png',
+    shortcut: '/profile picture.png',
+    apple: '/profile picture.png',
   },
 };
 

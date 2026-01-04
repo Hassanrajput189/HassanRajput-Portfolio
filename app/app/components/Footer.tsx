@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-2 text-body-small text-muted">
             <span>Built with</span>
-            <span className="text-accent-primary">●</span>
+            <span className="text-accent-primary text-lg">♥</span>
             <span>using Next.js & TypeScript</span>
           </div>
         </div>
