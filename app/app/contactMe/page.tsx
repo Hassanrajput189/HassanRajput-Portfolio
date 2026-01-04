@@ -69,7 +69,7 @@ const ContactMe = () => {
               Get In Touch
             </h1>
             <p className="text-body-large text-secondary">
-              Have a project in mind or want to collaborate? I'd love to hear from you!
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you!
             </p>
           </div>
 
