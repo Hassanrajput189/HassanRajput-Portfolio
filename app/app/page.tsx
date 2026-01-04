@@ -8,10 +8,10 @@ export default function Home() {
       <div>
         <Navbar/>
       </div>
-      <div className="my-8 flex-grow">
+      <div className="flex-grow">
         <Info/>
       </div>
-      <div>
+      <div className="relative bottom-0 w-full ">
         <Footer/>
       </div>
     </div>
