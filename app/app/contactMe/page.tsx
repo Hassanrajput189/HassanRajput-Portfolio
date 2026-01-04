@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { FaEnvelope, FaUser, FaComment, FaPaperPlane } from 'react-icons/fa';
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +33,7 @@ const ContactMe = () => {
       if (response.ok) {
         setStatus({
           type: "success",
-          message: "Message sent successfully! I'll get back to you soon.",
+          message: "Message sent successfully!",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -59,29 +58,17 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background-primary">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
+      <main className="flex-grow container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold text-center mb-8">Contact Me</h1>
         <div className="max-w-2xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-h2 text-primary font-bold mb-4">
-              Get In Touch
-            </h1>
-            <p className="text-body-large text-secondary">
-              Have a project in mind or want to collaborate? I'd love to hear from you!
-            </p>
-          </div>
-
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Name Field */}
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
                 htmlFor="name"
-                className="flex items-center gap-2 text-label font-medium text-primary mb-2"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
-                <FaUser className="w-4 h-4" />
                 Name
               </label>
               <input
@@ -91,18 +78,15 @@ const ContactMe = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="Your name"
-                className="w-full px-4 py-3 border border-primary rounded-button bg-background-primary text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            {/* Email Field */}
             <div>
               <label
                 htmlFor="email"
-                className="flex items-center gap-2 text-label font-medium text-primary mb-2"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
-                <FaEnvelope className="w-4 h-4" />
                 Email
               </label>
               <input
@@ -112,18 +96,15 @@ const ContactMe = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="your.email@example.com"
-                className="w-full px-4 py-3 border border-primary rounded-button bg-background-primary text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-colors duration-200"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            {/* Message Field */}
             <div>
               <label
                 htmlFor="message"
-                className="flex items-center gap-2 text-label font-medium text-primary mb-2"
+                className="block text-sm font-medium text-gray-700 mb-1"
               >
-                <FaComment className="w-4 h-4" />
                 Message
               </label>
               <textarea
@@ -132,41 +113,30 @@ const ContactMe = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                rows={6}
-                placeholder="Tell me about your project or collaboration idea..."
-                className="w-full px-4 py-3 border border-primary rounded-button bg-background-primary text-primary placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-colors duration-200 resize-none"
+                rows={4}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            {/* Status Message */}
             {status.type && (
               <div
-                className={`p-4 rounded-button flex items-center gap-2 ${
+                className={`p-4 rounded-lg ${
                   status.type === "success"
-                    ? "bg-green-50 text-green-700 border border-green-200"
-                    : "bg-red-50 text-red-700 border border-red-200"
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-700"
                 }`}
-                role="alert"
               >
-                {status.type === "success" ? (
-                  <FaEnvelope className="w-5 h-5" />
-                ) : (
-                  <FaComment className="w-5 h-5" />
-                )}
                 {status.message}
               </div>
             )}
 
-            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent-primary text-white font-medium rounded-button hover:bg-accent-hover transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2"
+              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200"
             >
-              <FaPaperPlane className="w-4 h-4" />
               Send Message
             </button>
           </form>
-
         </div>
       </main>
       <Footer />

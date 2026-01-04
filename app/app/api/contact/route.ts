@@ -3,7 +3,6 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
-  
     const { name, email, message } = await req.json();
 
     // Create a transporter using SMTP

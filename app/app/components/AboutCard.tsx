@@ -1,70 +1,51 @@
 import React from 'react';
-import { FaCode, FaAward } from 'react-icons/fa';
 
 interface CardProps {
   name: string;
-  desc?: string[];
+  desc?: string;
   tech?: string[];
-  icon?: 'code' | 'user' | 'award';
+  onClick?: () => void;
 }
 
-const AboutCard: React.FC<CardProps> = ({ name, desc, tech, icon = 'user' }) => {
-  const getIcon = () => {
-    switch (icon) {
-      case 'code':
-        return <FaCode className="w-6 h-6" />;
-      case 'award':
-        return <FaAward className="w-6 h-6" />;
-      default:        
-        return <img                
-                width={50}
-                height={50}
-                src="/profile picture.png"
-                alt="HR"                
-               />              
-    }
-  };
-
+const AboutCard: React.FC<CardProps> = ({ name, desc, tech, onClick }) => {
   return (
-    <section className="bg-background-primary border border-primary rounded-card p-8 shadow-card max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="text-accent-primary rounded-lg">
-          {getIcon()}
-        </div>
-        <h2 className="text-h3 text-primary font-semibold">
-          {name}
-        </h2>
-      </div>
+    <div
+      onClick={onClick}
+      className="flex flex-col items-center gap-5 rounded-2xl w-[90vw] lg:w-[60vw] h-auto cursor-pointer shadow-2xl shadow-gray-300 p-8  transition duration-300 ease-in-out transform hover:scale-105 "
+      style={{
+        transform: 'perspective(1000px)',
+      }}
+    >
+      {/* Name Section */}
+      <h2 className=" font-bold text-3xl text-gray-800 text-center">
+        {name}
+      </h2>
 
-      {/* Description */}
+      {/* Description Section */}
       {desc && (
-        <div className="prose prose-slate max-w-none">
-          <p className="text-body-large text-secondary leading-relaxed whitespace-pre-line">
-            {desc.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </p>
+        <div className="text-lg text-gray-600 whitespace-pre-line">
+          {desc}
         </div>
       )}
 
-      {/* Technologies/Skills */}
-      {tech && tech.length > 0 && (
-        <div className="mt-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+      {/* Technologies Section */}
+        {tech && tech.length > 0 && (
+          <div className="text-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-4">
             {tech.map((item, index) => (
-              <div
+              <span
                 key={index}
-                className="inline-flex items-center justify-center px-4 py-2 bg-accent-subtle text-accent-primary rounded-lg text-body-small font-medium hover:bg-accent-primary hover:text-white transition-colors duration-200"
+                className="px-3 py-2 bg-blue-100 text-blue-800 rounded-full text-md font-medium shadow-sm hover:bg-blue-200 transition duration-300 "
               >
-                {item}
-              </div>
+                {/* Working on it */}
+                {/* <img width={80} src={item} alt="" />   */}
+              {item}</span>
             ))}
           </div>
-        </div>
-      )}
-    </section>
+        )}
+
+    </div>
   );
 };
+
 
 export default AboutCard;
