@@ -1,25 +1,7 @@
-"use client";
-import React from 'react';
-
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="border-t border-primary bg-background-primary">
-      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="text-center">
-            <p className="text-body text-secondary">
-              {new Date().getFullYear()} Muhammad Hassan Rajput. All rights reserved.
-            </p>
-          </div>
-          <div className="flex items-center gap-2 text-body-small text-muted">
-            <span>Built with</span>
-            <span className="text-accent-primary text-lg">♥</span>
-            <span>using Next.js & TypeScript</span>
-          </div>
-        </div>
-      </div>
+    <footer className="border-t border-slate-100 py-6 text-center text-sm text-slate-400">
+      © {new Date().getFullYear()} Muhammad Hassan Rajput
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,54 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google';
 import localFont from "next/font/local";
 import "./globals.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
-// Professional fonts for the portfolio
-const inter = Inter({
-  subsets: ['latin'],
-  variable: "--font-inter",
-  display: 'swap',
-});
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
+const inter = localFont({ src: "./fonts/GeistVF.woff", variable: "--font-inter", weight: "100 900" });
 
 export const metadata: Metadata = {
-  title: "Hassan Rajput Portfolio",
-  description: "Full Stack Web Developer - Building modern web applications with clean code and exceptional user experiences",
-  keywords: ["Full Stack Developer", "Web Developer", "React", "Next.js", "TypeScript", "Portfolio"],
-  authors: [{ name: "Hassan Rajput" }],
-  openGraph: {
-    title: "Hassan Rajput Portfolio",
-    description: "Full Stack Web Developer - Building modern web applications",
-    type: "website",
-  },
-  icons: {
-    icon: '/profile picture.png',
-    shortcut: '/profile picture.png',
-    apple: '/profile picture.png',
-  },
+  title: "Hassan Rajput | AI Engineer",
+  description: "AI Engineer focused on computer vision and medical image analysis.",
+  icons: { icon: "/profile.png" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistSans.variable} ${geistMono.variable}`}>
-      <body className={`${inter.variable} antialiased`}>
-        {children}
+    <html lang="en" className={inter.variable}>
+      <body className="font-sans min-h-screen flex flex-col">
+        <Nav />
+        <main className="flex-1 w-full max-w-3xl mx-auto px-6 py-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );
